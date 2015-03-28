@@ -1,3 +1,9 @@
 [submodule "lisp/warp"]
 	path = lisp/warp
-	url = https://github.com/yukihr/Warp.git
+	url = https://github.com/toroidal-code/Warp.git
+[submodule "lisp/synosaurus"]
+	path = lisp/synosaurus
+	url = https://github.com/toroidal-code/synosaurus
+[submodule "lisp/synonymous"]
+	path = lisp/synonymous
+	url = https://github.com/toroidal-code/synonymous
