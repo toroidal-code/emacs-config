@@ -7,3 +7,12 @@
 [submodule "lisp/synonymous"]
 	path = lisp/synonymous
 	url = https://github.com/toroidal-code/synonymous
+[submodule "themes/monokai"]
+	path = themes/monokai
+	url = https://github.com/toroidal-code/el-monokai-theme
+[submodule "themes/powerline"]
+	path = themes/powerline
+	url = https://github.com/toroidal-code/powerline.git
+[submodule "lisp/cedet"]
+	path = lisp/cedet
+	url = git://git.code.sf.net/p/cedet/git
