@@ -13,6 +13,9 @@
 [submodule "themes/powerline"]
 	path = themes/powerline
 	url = https://github.com/toroidal-code/powerline.git
-[submodule "lisp/cedet"]
-	path = lisp/cedet
-	url = git://git.code.sf.net/p/cedet/git
+[submodule "lisp/tabbar-ruler"]
+	path = lisp/tabbar-ruler
+	url = https://github.com/taquangtrung/tabbar-ruler.el
+[submodule "lisp/cycle-themes"]
+	path = lisp/cycle-themes
+	url = http://github.com/toroidal-code/cycle-themes.el
