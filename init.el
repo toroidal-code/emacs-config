@@ -1,15 +1,11 @@
+;;; init.el --- My init file
+;;; Code:
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(compilation-message-face (quote default))
- '(cua-global-mark-cursor-color "#2aa198")
- '(cua-normal-cursor-color "#839496")
- '(cua-overwrite-cursor-color "#b58900")
- '(cua-read-only-cursor-color "#859900")
  '(custom-safe-themes
    (quote
     ("4dd1b115bc46c0f998e4526a3b546985ebd35685de09bc4c84297971c822750e" default)))
@@ -22,32 +18,8 @@
      ("/home/kate/code" "code")
      ("/home/kate/github" "github")
      ("/home/kate/Google Drive/Writer" "Writer"))))
- '(fci-rule-color "#073642")
  '(helm-imenu-fuzzy-match t)
  '(helm-recentf-fuzzy-match t)
- '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
- '(highlight-symbol-colors
-   (--map
-    (solarized-color-blend "#002b36" 0.25)
-    (quote
-     ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
- '(highlight-symbol-foreground-color "#93a1a1")
- '(highlight-tail-colors
-   (quote
-    (("#073642" . 0)
-     ("#546E00" . 20)
-     ("#00736F" . 30)
-     ("#00629D" . 50)
-     ("#7B6000" . 60)
-     ("#8B2C02" . 70)
-     ("#93115C" . 85)
-     ("#073642" . 100))))
- '(hl-bg-colors
-   (quote
-    ("#7B6000" "#8B2C02" "#990A1B" "#93115C" "#3F4D91" "#00629D" "#00736F" "#546E00")))
- '(hl-fg-colors
-   (quote
-    ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
  '(indent-tabs-mode nil)
  '(ispell-local-dictionary "american")
  '(ispell-local-dictionary-alist
@@ -56,65 +28,34 @@
       ("-d" "en_US-w_accents")
       nil utf-8))))
  '(magit-diff-use-overlays nil)
- '(package-selected-packages
-   (quote
-    (bind-key helm use-package package-utils yasnippet typopunct typo tuareg tabbar synosaurus sublimity solarized-theme smartparens smart-mode-line rw-language-and-country-codes rw-ispell rw-hunspell request req-package rainbow-mode rainbow-delimiters popwin popup paredit paradox pandoc-mode ocp-indent neotree merlin markdown-mode+ load-dir leuven-theme langtool js2-mode js-comint iedit ido-ubiquitous helm-ls-git helm-descbinds flymake-jslint flymake-coffee flycheck evil esxml csv-mode company coffee-mode cl-generic)))
  '(paradox-github-token t)
- '(pos-tip-background-color "#073642")
- '(pos-tip-foreground-color "#93a1a1")
  '(powerline-default-separator (quote utf-8))
  '(powerline-height 20)
- '(safe-local-variable-values
-   (quote
-    ((eval when
-           (fboundp
-            (quote rainbow-mode))
-           (rainbow-mode 1)))))
  '(scroll-bar-mode nil)
- '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(sp-base-key-bindings (quote paredit))
  '(tab-stop-list
    (quote
     (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120)))
- '(tool-bar-mode nil)
- '(vc-annotate-background nil)
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#dc322f")
-     (40 . "#c85d17")
-     (60 . "#be730b")
-     (80 . "#b58900")
-     (100 . "#a58e00")
-     (120 . "#9d9100")
-     (140 . "#959300")
-     (160 . "#8d9600")
-     (180 . "#859900")
-     (200 . "#669b32")
-     (220 . "#579d4c")
-     (240 . "#489e65")
-     (260 . "#399f7e")
-     (280 . "#2aa198")
-     (300 . "#2898af")
-     (320 . "#2793ba")
-     (340 . "#268fc6")
-     (360 . "#268bd2"))))
- '(vc-annotate-very-old-color nil)
- '(weechat-color-list
-   (quote
-    (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83"))))
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-variable-tag ((t (:foreground "blue1" :weight bold :height 1.0 :family "Liberation Mono"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((t (:family "Open Sans")))))
 
 
+
+
 ;;;;; REQUIRES ;;;;;
+
+;;; Commentary:
+;; 
+
 (require 'cl-lib)
 (require 'package)
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -125,12 +66,12 @@
   "Should we try and install extra tools for Emacs?")
 
 
-;;;;;;;;;;;;;;;
-;; Utilities ;;
-;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;
+;; Functional Things ;;
+;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun foldr (func end lst)
-  "Reduce two-argument FUNCTION across SEQUENCE
+  "Reduce two-argument FUNCTION across SEQUENCE.
 \n(fn FUNCTION INITIAL )
 \nsignature: (a -> b -> b) -> b -> a seq +> b"
   (if (null lst) end
@@ -146,6 +87,11 @@
   "Compose two functions together.
 \nsignature (b -> c) -> (a -> b) +> a -> c"
   `(lambda (x) (,f (,g x))))
+
+(defun expand-alist (alist)
+  (cl-loop for (keys . vals)
+           in alist
+           append (mapcar #'(lambda (key) (cons key vals)) keys)))
 
 
 (defun djcb-popup (title msg &optional icon sound)
@@ -171,36 +117,11 @@ a sound to be played"
         (t (list x))))
 
 
-(defun get-sudo-password ()
-  "Get a sudo password that will last for 5 minutes (long enough to install everything)."
-  (setq password-cache-expiry 300)
-  (password-read-and-add "Password for sudo: " "sudo"))
+;;;;;;;;;;;;;;;
+;; Utilities ;;
+;;;;;;;;;;;;;;;
 
-
-(defmacro optionally (thing)
-  "I use this pattern a lot."
-  `(when ,thing ,thing))
-
-
-(defmacro concat-with (separator strings)
-  "Concatenate a string delimited by SEPARATOR."
-`(mapconcat #'identity ,strings ,separator))
-
-;; (defmacro install-external-package (command &optional root-req executable)
-;;   "Install an external package using COMMAND"
-;;   (let* ((expanded (split-string command))
-;;          (package-manager (car expanded))
-;;          (package (car (last expanded)))
-;;          (proc-name (concat-with "-" expanded)))
-;;     (when (and install-extra-tools (exec-installed-p package-manager))
-;;       (unless (exec-installed-p (or executable package))
-;;           (let ((sudo-prefix (when root-req
-;;                                (list "echo" (shell-quote-argument (get-sudo-password)) "| sudo -S"))))
-;;                 (start-process-shell-command
-;;                  proc-name (concat "*" proc-name "*")
-;;                  (concat-with " " (flatten (list (optionally sudo-prefix)
-;;                                                  package-manager
-;;                                                  (cdr expanded))))))))))
+;;(require 'native-package)
 
 ;;;;;;;;;;;;;;;;;
 ;; Main Things ;;
@@ -220,18 +141,22 @@ a sound to be played"
     ("\\=o" . [?ō])
     ("\\=U" . [?Ū])
     ("\\=u" . [?ū])
-    ;; C-x 8 . enters a floating center dot.
+    ("l"    . [?λ])
+    ;; c-x 8 . enters a floating center dot.
     ;; However; pandoc with --smart creates ellipses out of ...
     ;; ("."    . [?…])
     ))
 
-(defun inject-custom-transl-char-map ()
-  (cl-loop for (key . def) in custom-transl-char-map do
-           (define-key 'iso-transl-ctl-x-8-map key def)))
 
-(inject-custom-transl-char-map)
+(cl-loop for (key . def) in custom-transl-char-map do
+        (define-key 'iso-transl-ctl-x-8-map key def))
 
-;; Horizontal scrolling
+
+(global-set-key (kbd "C-c \\") #'(lambda () (interactive) (insert-char ?λ)))
+
+
+
+;; horizontal scrolling
 (put 'scroll-left 'disabled nil)
 (put 'scroll-right 'disabled nil)
 (global-set-key (kbd "<mouse-7>") #'(lambda () (interactive) (scroll-left)))
@@ -252,24 +177,40 @@ a sound to be played"
 (setq-default cursor-type '(bar . 1))
 (setq blink-cursor-mode t)
 
+;; No tool-bar
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+
 ;; No scroll-bar
-(scroll-bar-mode nil)
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; Line-numbering
-(linum-mode)
+(if (fboundp 'global-linum-mode) (global-linum-mode))
+
+(require 'cus-edit)
+(set-face-attribute 'custom-face-tag nil
+                    :family "Liberation Mono"
+                    :height 1.1)
 
 
+(set-face-attribute 'custom-variable-tag nil
+                    :family "Liberation Mono"
+                    :height 1.1)
 
 ;;;;;;;;;;;;;;
 ;; Packages ;;
 ;;;;;;;;;;;;;;
 
+(require 'package-prioritize)
+
 (package-initialize) ;; You might already have this line
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(package-refresh-contents)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(unless package-archive-contents (package-refresh-contents))
 
+;; Prefer melpa-stable. Because it's stable.
+(setf package-archive-priority
+      '("melpa-stable" "melpa" "marmalade" "gnu"))
 
 ;; use-package
 (unless (package-installed-p 'use-package)
@@ -294,6 +235,14 @@ a sound to be played"
 
 (el-get 'sync)
 
+(use-package exec-path-from-shell
+  :ensure t)
+
+(setf exec-path-from-shell-variables '("PATH" "MANPATH" "NODE_PATH"))
+
+(when (and (memq window-system '(ns x w32))
+           (memq system-type '(gnu gnu/linux darwin windows-nt)))
+  (exec-path-from-shell-initialize))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;       AESTHETICS        ;;
@@ -353,12 +302,14 @@ a sound to be played"
 ;; Custom Powerline
 (add-to-list 'load-path "~/.emacs.d/themes/powerline")
 (require 'powerline)
-(powerline-vimish-theme)
+;;(powerline-vimish-theme)
 
 
 ;; A fancy tab-bar
 (use-package tabbar-ruler
   :ensure t
+  :bind (("<mouse-9>" . tabbar-forward)
+         ("<mouse-8>" . tabbar-backward))
   :init (progn
           (setq tabbar-use-images nil)
           (setq tabbar-ruler-global-tabbar t)
@@ -463,7 +414,6 @@ The tab is added in a sorted position."
   :bind ("C-c C-s s" . smartparens-strict-mode)
   :config (progn
             (require 'smartparens-config)
-            (setq indent-line-function #'indent-according-to-mode)
             (smartparens-global-mode 1)))
 
 ;; Company auto-completion
@@ -476,7 +426,7 @@ The tab is added in a sorted position."
             ;; Saner selection key
             (define-key company-active-map (kbd "C-n") 'company-select-next)
             (define-key company-active-map (kbd "C-p") 'company-select-previous)
-            (define-key company-active-map (kbd "C-d") 'company-show-doc-buffer)
+            (define-key company-active-map (kbd "C-h") 'company-show-doc-buffer)
             (define-key company-active-map (kbd "M-.") 'company-show-location)))
 
 ;; Code snippets
@@ -497,23 +447,22 @@ The tab is added in a sorted position."
   :config (progn
             (setq neo-persist-show nil)))
 
-
-(use-package direx
+(use-package aurel
   :ensure t)
 
 ;; Whitespace-mode
-(use-package whitespace
-  :ensure t
-  :config (progn
-            ;; automatically clean up bad whitespace
-            (setq whitespace-action '(auto-cleanup))
-            ;; only show bad whitespace
-            (setq whitespace-style '(trailing
-                                     space-before-tab
-                                     indentation empty
-                                     space-after-tab))
+;; (use-package whitespace
+;;   :ensure t
+;;   :config (progn
+;;             ;; automatically clean up bad whitespace
+;;             (setq whitespace-action '(auto-cleanup))
+;;             ;; only show bad whitespace
+;;             (setq whitespace-style '(trailing
+;;                                      space-before-tab
+;;                                      indentation empty
+;;                                      space-after-tab))
 
-            (global-whitespace-mode)))
+;;             (global-whitespace-mode)))
 
 ;; Multiple-word edit bound to C-;
 (use-package iedit
@@ -536,36 +485,36 @@ The tab is added in a sorted position."
 (use-package pandoc-mode
   :ensure t)
 
-;; Langtool
-(use-package langtool
-  :ensure t
-  :bind (("C-x 4 w" . langtool-check)
-         ("C-x 4 W" . langtool-check-done)
-         ("C-x 4 l" . langtool-switch-default-language)
-         ("C-x 4 4" . langtool-show-message-at-point)
-         ("C-x 4 c" . langtool-correct-buffer))
-  :config (progn
-            (setq langtool-java-bin "/usr/bin/java")
-            (setq langtool-java-classpath "/usr/share/languagetool:/usr/share/java/languagetool/*")
-            (setq langtool-mother-tongue "en")
-            (langtool-default-language "en")
-            (setq langtool-disabled-rules '("EN_QUOTES"))))
+;; ;; Langtool
+;; (use-package langtool
+;;   :ensure t
+;;   :bind (("C-x 4 w" . langtool-check)
+;;          ("C-x 4 W" . langtool-check-done)
+;;          ("C-x 4 l" . langtool-switch-default-language)
+;;          ("C-x 4 4" . langtool-show-message-at-point)
+;;          ("C-x 4 c" . langtool-correct-buffer))
+;;   :config (progn
+;;             (setq langtool-java-bin "/usr/bin/java")
+;;             (setq langtool-java-classpath "/usr/share/languagetool:/usr/share/java/languagetool/*")
+;;             (setq langtool-mother-tongue "en")
+;;             (langtool-default-language "en")
+;;             (setq langtool-disabled-rules '("EN_QUOTES"))))
 
 ;; Auto-magic indenting pasted code
-;; (dolist (command '(yank yank-pop))
-;;   (eval `(defadvice ,command (after indent-region activate)
-;;            (and (not current-prefix-arg)
-;;                 (member major-mode '(emacs-lisp-mode lisp-mode
-;;                                      clojure-mode    scheme-mode
-;;                                      haskell-mode    ruby-mode
-;;                                      rspec-mode      python-mode
-;;                                      c-mode          c++mode
-;;                                      objc-mode       latex-mode
-;;                                      plain-tex-mode  tuareg-mode
-;;                                      julia-mode      js2-mode
-;;                                      coffee-mode))
-;;                 (let ((mark-even-if-inactive transient-mark-mode))
-;;                   (indent-region (region-beginning) (region-end) nil))))))
+(dolist (command '(yank yank-pop))
+  (eval `(defadvice ,command (after indent-region activate)
+           (and (not current-prefix-arg)
+                (member major-mode '(emacs-lisp-mode lisp-mode
+                                     clojure-mode    scheme-mode
+                                     haskell-mode    ruby-mode
+                                     rspec-mode      python-mode
+                                     c-mode          c++mode
+                                     objc-mode       latex-mode
+                                     plain-tex-mode  tuareg-mode
+                                     julia-mode      js2-mode
+                                     coffee-mode))
+                (let ((mark-even-if-inactive transient-mark-mode))
+                  (indent-region (region-beginning) (region-end) nil))))))
 
 ;; Swap buffer positions
 (use-package buffer-move
@@ -618,7 +567,7 @@ The tab is added in a sorted position."
 (use-package ecb
   :ensure t
   :bind  (("\C-c \C-\\" . ecb-toggle)
-          ("\C-c \\"    . ecb-toggle-ecb-windows)))
+          ("\C-c c \\"  . ecb-toggle-ecb-windows)))
 
 ;; Toggle ecb activation
 (defun ecb-toggle ()
@@ -672,6 +621,15 @@ The tab is added in a sorted position."
 ;;       PROGRAMMING LANGUAGES      ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;;;;;;;;;;;
+;; General ;;
+;;;;;;;;;;;;;
+
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (font-lock-add-keywords nil
+                                    '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
+
 ;;;;;;;;;;;;;;
 ;; Markdown ;;
 ;;;;;;;;;;;;;;
@@ -708,13 +666,6 @@ The tab is added in a sorted position."
 (add-hook 'markdown-mode-hook 'markdown-mode-defaults)
 
 
-(defun setup-serif-buffer-face
-    "Enable a pretty serif face locally"
-    (setq buffer-face-mode-face '(:family "Cambria"
-                                  :height 135
-                                  :width semi-condensed))
-  (buffer-face-mode))
-
 ;; Custom file extensions and modes
 (defvar custom-markdown-modes
   '(
@@ -738,7 +689,10 @@ The tab is added in a sorted position."
                (write . "odt")
                (output-dir . "/home/kate/Documents/Pandoc Output"))
              do (pandoc--set opt val))
-       (setup-serif-buffer-face)))
+       (setq buffer-face-mode-face '(:family "Cambria"
+                                     :height 135
+                                     :width semi-condensed))
+       (buffer-face-mode)))
 
 
     ;; Notes are similar, but generate htmls instead
@@ -746,12 +700,18 @@ The tab is added in a sorted position."
     ("\\.note\\'" . (lambda ()
                       (markdown-mode)
                       (pandoc-set-write "html")
-                      (setup-serif-buffer-face)))
+                      (setq buffer-face-mode-face '(:family "Cambria"
+                                                            :height 135
+                                                            :width semi-condensed))
+                      (buffer-face-mode)))
 
     ;; Obviously a github repo. And if not, well it's pretty anyways
     ("^README.md$" . (lambda ()
                        (gfm-mode)
-                       (setup-serif-buffer-face)))))
+                       (setq buffer-face-mode-face '(:family "Cambria"
+                                                             :height 135
+                                                             :width semi-condensed))
+                       (buffer-face-mode)))))
 
 (dolist (elt custom-markdown-modes)
   (add-to-list 'auto-mode-alist elt))
@@ -815,7 +775,7 @@ The tab is added in a sorted position."
 (unless (getenv "NODE_PATH")
   (setenv "NODE_PATH" "/usr/lib/node_modules/"))
 
-;;;;(install-external-package "npm install -g marked")
+;;(install-external-package "npm install -g marked")
 
 
 ;;;;;;;;;;
@@ -845,27 +805,26 @@ The tab is added in a sorted position."
   :ensure t
   :config (add-hook 'sly-mode-hook 'sly-company-mode))
 
-;;;;(install-external-package "pacman -S clisp" t)
-;;;;(install-external-package "pacman -S sbcl" t)
+;;(install-external-package "pacman -S clisp" t)
+;;(install-external-package "pacman -S sbcl" t)
 
 ;;;;;;;;;;;;
 ;; Scheme ;;
 ;;;;;;;;;;;;
 
-(use-package geiser
-  :ensure t
-  :mode ("\\.scm$"
-         "\\.ss$"))
+;; (use-package geiser
+;;   :ensure t
+;;   :config (setq geiser-active-implementations '(guile)))
 
 ;; (use-package racket-mode
 ;;   :ensure t
 ;;   :bind ("C-c r" . racket-run)
 ;;   :mode ("\\.rkt$"))
 
-(add-hook 'geiser-mode 'lisp-coding-defaults)
+;; (add-hook 'geiser-mode 'lisp-coding-defaults)
 
-;;;;(install-external-package "pacman -S racket")
-;;;;(install-external-package "pacman -S guile")
+;;(install-external-package "pacman -S racket")
+;;(install-external-package "pacman -S guile")
 
 ;;;;;;;;;;;;;;;;
 ;; Emacs Lisp ;;
@@ -881,6 +840,7 @@ The tab is added in a sorted position."
     (emacs-lisp-byte-compile)))
 
 (defun emacs-lisp-mode-defaults ()
+  "Defaults for `emacs-lisp-mode'."
   (setq mode-name "el")
   (add-hook 'emacs-lisp-mode-hook 'lisp-coding-defaults)
   (add-hook 'emacs-lisp-mode-hook 'recompile-elc-on-save nil t)
@@ -889,9 +849,6 @@ The tab is added in a sorted position."
 
 (add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-defaults)
 (add-hook 'eldoc-mode-hook #'(lambda () (diminish 'eldoc-mode)))
-
-;; Disable flycheck in init.el
-(add-to-list 'auto-mode-alist '("^init.el$" . (lambda () (flycheck-mode -1))))
 
 
 ;;;;;;;;;;;
@@ -926,6 +883,8 @@ The tab is added in a sorted position."
              ;; trigger completion at interesting places, such as after scope operator
              ;;     std::|
              (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)))
+
+;;(install-external-package "pacman -S cpplint")
 
 ;;;;;;;;;;
 ;; Ruby ;;
@@ -990,6 +949,7 @@ The tab is added in a sorted position."
 ;; OCaml ;;
 ;;;;;;;;;;;
 
+;; Update the emacs load path
 (let ((opam-share (substring (shell-command-to-string "opam config var share") 0 -1)))
   (add-to-list 'load-path (concat opam-share "/emacs/site-lisp")))
 
@@ -998,12 +958,6 @@ The tab is added in a sorted position."
 (cl-loop for (name val)
          in (car (read-from-string (shell-command-to-string "opam config env --sexp")))
          do (setenv name val))
-
-;; Update the emacs path
-;;(setq exec-path (split-string (getenv "PATH") path-separator))
-
-;; Update the emacs load path
-(add-to-list 'load-path (concat (getenv "OCAML_TOPLEVEL_PATH") "/../../share/emacs/site-lisp"))
 
 
 ;; The OCaml major mode
@@ -1031,20 +985,21 @@ The tab is added in a sorted position."
             ;; (add-hook 'merlin-mode-hook 'company-mode)
             (add-hook 'tuareg-mode-hook 'merlin-mode)))  ; needed only if ocamlmerlin not already in your PATH
 
+(use-package flycheck-ocaml
+  :ensure t
+  :config
+  (with-eval-after-load 'merlin
+    ;; Disable Merlin's own error checking
+    (setq merlin-error-after-save nil)
 
-
-(with-eval-after-load 'merlin
-  ;; Disable Merlin's own error checking
-  (setq merlin-error-after-save nil)
-
-  ;; Enable Flycheck checker
-  (flycheck-ocaml-setup))
+    ;; Enable Flycheck checker
+    (flycheck-ocaml-setup)))
 
 (add-hook 'tuareg-mode-hook #'merlin-mode)
 
 ;;(install-external-package "pacman -S ocaml" t)
 ;;(install-external-package "opam install ocp-indent")
-;;(install-external-package "opam install ocp-indent")
+;;(install-external-package "opam install merlin" nil "ocamlmerlin")
 
 ;;;;;;;;;;;;
 ;; Python ;;
@@ -1134,3 +1089,23 @@ The tab is added in a sorted position."
   :ensure t)
 
 ;;(install-external-package "pacman -S julia" t)
+
+;;;;;;;;;
+;; Lua ;;
+;;;;;;;;;
+
+(use-package lua-mode
+  :ensure t
+  :mode "\\.lua$"
+  :interpreter "lua")
+
+;;;;;;;;;;
+;; Cask ;;
+;;;;;;;;;;
+
+(use-package cask
+  :ensure t)
+
+(provide 'init)
+
+;;; init.el ends here
