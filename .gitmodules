@@ -7,9 +7,6 @@
 [submodule "lisp/synonymous"]
 	path = lisp/synonymous
 	url = https://github.com/toroidal-code/synonymous
-[submodule "themes/monokai"]
-	path = themes/monokai
-	url = https://github.com/toroidal-code/el-monokai-theme
 [submodule "themes/powerline"]
 	path = themes/powerline
 	url = https://github.com/toroidal-code/powerline.git
@@ -19,3 +16,12 @@
 [submodule "lisp/cycle-themes"]
 	path = lisp/cycle-themes
 	url = http://github.com/toroidal-code/cycle-themes.el
+[submodule "themes/leuven"]
+	path = themes/leuven
+	url = https://github.com/toroidal-code/emacs-leuven-theme.git
+[submodule "cedet"]
+	path = lisp/cedet
+	url = https://github.com/toroidal-code/cedet.git
+[submodule "monokai"]
+	path = themes/monokai
+	url = https://github.com/toroidal-code/monokai-extended-theme.el.git

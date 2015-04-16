@@ -6,21 +6,106 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(compilation-message-face (quote default))
+ '(cua-global-mark-cursor-color "#3aB1B8")
+ '(cua-normal-cursor-color "#839496")
+ '(cua-overwrite-cursor-color "#b58900")
+ '(cua-read-only-cursor-color "#859900")
  '(custom-safe-themes
    (quote
-    ("4dd1b115bc46c0f998e4526a3b546985ebd35685de09bc4c84297971c822750e" default)))
+    ("4cc896bc19f72a1228dbd869b1a41848e2412199bd415b67848ffb1f58b5306b" "4dd1b115bc46c0f998e4526a3b546985ebd35685de09bc4c84297971c822750e" default)))
  '(desktop-save-mode t)
+ '(ecb-compile-window-height 6)
  '(ecb-options-version "2.40")
+ '(ecb-show-tags
+   (quote
+    ((default
+       (include collapsed nil)
+       (parent collapsed nil)
+       (type flattened nil)
+       (variable collapsed nil)
+       (function flattened nil)
+       (label hidden nil)
+       (t collapsed nil))
+     (c++-mode
+      (include collapsed nil)
+      (parent collapsed nil)
+      (type flattened nil)
+      (variable collapsed access)
+      (function flattened nil)
+      (function collapsed nil)
+      (label hidden nil)
+      (t collapsed nil))
+     (c-mode
+      (include collapsed nil)
+      (parent collapsed nil)
+      (type flattened nil)
+      (variable collapsed access)
+      (function flattened nil)
+      (function collapsed access)
+      (label hidden nil)
+      (t collapsed nil))
+     (bovine-grammar-mode
+      (keyword collapsed name)
+      (token collapsed name)
+      (nonterminal flattened name)
+      (rule flattened name)
+      (t collapsed nil))
+     (wisent-grammar-mode
+      (keyword collapsed name)
+      (token collapsed name)
+      (nonterminal flattened name)
+      (rule flattened name)
+      (t collapsed nil))
+     (texinfo-mode
+      (section flattened nil)
+      (def collapsed name)
+      (t collapsed nil)))))
  '(ecb-source-path
    (quote
     (("/home/kate/" "home")
      ("/home/kate/git" "git")
      ("/home/kate/code" "code")
      ("/home/kate/github" "github")
-     ("/home/kate/Google Drive/Writer" "Writer"))))
+     ("/home/kate/Google Drive/Writer" "Writer")
+     ("/" "/"))))
+ '(ecb-tag-display-function
+   (quote
+    ((default . ecb--semantic-format-tag-uml-abbreviate))))
+ '(ede-project-directories
+   (quote
+    ("/home/kate/github/sedlex/src/lib" "/home/kate/github/sedlex" "~/github/sedlex/" "~/github/kiln/")))
+ '(fci-rule-color "#073642")
+ '(ggtags-global-output-format (quote grep))
+ '(ggtags-use-idutils t)
  '(helm-imenu-fuzzy-match t)
  '(helm-recentf-fuzzy-match t)
- '(indent-tabs-mode nil)
+ '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
+ '(highlight-symbol-colors
+   (--map
+    (solarized-color-blend it "#002b36" 0.25)
+    (quote
+     ("#b58900" "#3aB1B8" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
+ '(highlight-symbol-foreground-color "#93a1a1")
+ '(highlight-tail-colors
+   (quote
+    (("#073642" . 0)
+     ("#546E00" . 20)
+     ("#00736F" . 30)
+     ("#00629D" . 50)
+     ("#7B6000" . 60)
+     ("#8B2C02" . 70)
+     ("#93115C" . 85)
+     ("#073642" . 100))))
+ '(hl-bg-colors
+   (quote
+    ("#7B6000" "#8B2C02" "#990A1B" "#93115C" "#3F4D91" "#00629D" "#00736F" "#546E00")))
+ '(hl-fg-colors
+   (quote
+    ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
+ '(indent-tabs-mode t)
  '(ispell-local-dictionary "american")
  '(ispell-local-dictionary-alist
    (quote
@@ -29,14 +114,48 @@
       nil utf-8))))
  '(magit-diff-use-overlays nil)
  '(paradox-github-token t)
+ '(pos-tip-background-color "#073642")
+ '(pos-tip-foreground-color "#93a1a1")
  '(powerline-default-separator (quote utf-8))
  '(powerline-height 20)
- '(scroll-bar-mode nil)
- '(sp-base-key-bindings (quote paredit))
- '(tab-stop-list
+ '(projectile-global-mode t)
+ '(safe-local-variable-values
    (quote
-    (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120)))
- '(tool-bar-mode nil))
+    ((eval when
+           (fboundp
+            (quote rainbow-mode))
+           (rainbow-mode 1)))))
+ '(scroll-bar-mode nil)
+ '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
+ '(sp-base-key-bindings (quote paredit))
+ '(term-default-bg-color "#002b36")
+ '(term-default-fg-color "#839496")
+ '(tool-bar-mode nil)
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#dc322f")
+     (40 . "#c85d17")
+     (60 . "#be730b")
+     (80 . "#b58900")
+     (100 . "#a58e00")
+     (120 . "#9d9100")
+     (140 . "#959300")
+     (160 . "#8d9600")
+     (180 . "#859900")
+     (200 . "#6ca13d")
+     (220 . "#5fa45c")
+     (240 . "#53a97a")
+     (260 . "#46ad99")
+     (280 . "#3aB1B8")
+     (300 . "#32a1c2")
+     (320 . "#2e9ac7")
+     (340 . "#2a92cc")
+     (360 . "#268bd2"))))
+ '(vc-annotate-very-old-color nil)
+ '(weechat-color-list
+   (quote
+    (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#3aB1B8" "#839496" "#657b83"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -71,7 +190,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun foldr (func end lst)
-  "Reduce two-argument FUNCTION across SEQUENCE.
+  "Reduce two-argument FUNC, END being the initial value, over LST.
 \n(fn FUNCTION INITIAL )
 \nsignature: (a -> b -> b) -> b -> a seq +> b"
   (if (null lst) end
@@ -84,20 +203,21 @@
 
 
 (defun compose (f g)
-  "Compose two functions together.
+  "Compose two functions F and G together.
 \nsignature (b -> c) -> (a -> b) +> a -> c"
   `(lambda (x) (,f (,g x))))
 
 (defun expand-alist (alist)
+  "Expand a nested ALIST."
   (cl-loop for (keys . vals)
            in alist
            append (mapcar #'(lambda (key) (cons key vals)) keys)))
 
 
 (defun djcb-popup (title msg &optional icon sound)
-  "Show a popup if we're on X, or echo it otherwise; TITLE is the title
-of the message, MSG is the context. Optionally, you can provide an ICON and
-a sound to be played"
+  "Show a popup if we're on X, or echo it otherwise;
+TITLE is the title of the message, MSG is the context,
+Optionally, you can provide an ICON and a SOUND to be played."
 
   (interactive)
   (when sound (shell-command
@@ -110,8 +230,8 @@ a sound to be played"
     (message (concat title ": " msg))))
 
 
-(defun flatten(x)
-  "Recursively flatten nested lists."
+(defun flatten (x)
+  "Recursively flatten nested list X."
   (cond ((null x) nil)
         ((listp x) (append (flatten (car x)) (flatten (cdr x))))
         (t (list x))))
@@ -155,6 +275,12 @@ a sound to be played"
 (global-set-key (kbd "C-c \\") #'(lambda () (interactive) (insert-char ?λ)))
 
 
+;; use Shift+arrow_keys to move cursor around split panes
+;; when cursor is on edge, move to the other side, as in a toroidal space
+(require 'windmove)
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings)
+  (setf windmove-wrap-around t ))
 
 ;; horizontal scrolling
 (put 'scroll-left 'disabled nil)
@@ -249,15 +375,21 @@ a sound to be played"
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Leuven
-(use-package leuven-theme
-  :ensure t
-  :config (load-theme 'leuven t t))
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/leuven/")
+(load-theme 'leuven t t)
+
+;; ;; Github
+;; (use-package github-theme
+;;   :ensure t
+;;   :config (load-theme 'github-theme t t))
 
 ;; Solarized
-(use-package solarized-theme
-  :ensure t
-  :config (progn (load-theme 'solarized-dark t t)
-                 (load-theme 'solarized-light t t)))
+(add-to-list 'load-path "~/.emacs.d/themes/solarized")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/solarized/")
+(setq solarized-distinct-fringe-background t) ;; make the fringe stand out from the background
+(setq solarized-use-less-bold t) ;; use less bolding
+(load-theme 'solarized-dark t t)
+(load-theme 'solarized-light t t)
 
 ;; Ample
 (use-package ample-theme
@@ -269,12 +401,16 @@ a sound to be played"
 
 ;; Monokai
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/monokai/")
-(load-theme 'monokai t t)
+(load-theme 'monokai-extended t t)
 
 ;; cycle-themes
+(add-to-list 'custom-theme-load-path "~/.emacs.d/lisp/cycle-themes")
 (require 'cycle-themes)
 (setq cycle-themes-theme-list
-      '(leuven monokai ample solarized-dark))
+      '(leuven monokai-extended solarized-dark))
+;; (define-key cycle-themes-mode-map (kbd "C-c C-c C-t") 'cycle-themes)
+
+
 
 (defun flatten-mode-line ()
   (set-face-attribute 'mode-line nil
@@ -288,10 +424,11 @@ a sound to be played"
                                    (face-background 'mode-line))))
 
 (defun normalize-fringes ()
+  "Make the fringes the same color as the background."
   (unless (and (boundp 'ecb-active)
                ecb-active)
-    (set-face-attribute 'fringe nil :background (face-background 'default))))
-
+    (set-face-attribute 'fringe nil :background (face-background 'default))
+    (set-face-attribute 'linum nil :background (face-background 'default))))
 
 (add-hook 'cycle-themes-after-cycle-hook #'flatten-mode-line)
 (add-hook 'cycle-themes-after-cycle-hook #'normalize-fringes)
@@ -308,14 +445,15 @@ a sound to be played"
 ;; A fancy tab-bar
 (use-package tabbar-ruler
   :ensure t
-  :bind (("<mouse-9>" . tabbar-forward)
-         ("<mouse-8>" . tabbar-backward))
   :init (progn
           (setq tabbar-use-images nil)
           (setq tabbar-ruler-global-tabbar t)
           (setq tabbar-ruler-movement-timer-delay 1000000))
   :config (setq tabbar-buffer-groups-function 'tabbar-buffer-groups))
 
+
+(global-key-binding (kbd "<mouse-9>") #'((lambda () (interactive) (tabbar-forward))))
+(global-key-binding (kbd "<mouse-8>") #'((lambda () (interactive) (tabbar-backward))))
 
 ;; A custom function to make the tabs sorted alphabetically
 (defun tabbar-add-tab (tabset object &optional append_ignored)
@@ -388,6 +526,14 @@ The tab is added in a sorted position."
             (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
             (evil-define-key 'god global-map [escape] 'evil-god-state-bail)))
 
+;; Projectile
+(use-package projectile
+  :ensure t)
+
+;; Etags for emacs
+(use-package ggtags
+  :ensure t)
+
 ;; Popup help buffers
 (use-package popwin
   :ensure t
@@ -416,6 +562,10 @@ The tab is added in a sorted position."
             (require 'smartparens-config)
             (smartparens-global-mode 1)))
 
+(add-hook 'smartparens-mode-hook #'(lambda () (interactive)
+                                     (let ((lighter (if smartparens-strict-mode "sp/s" "sp")))
+                                       (diminish 'smartparens-mode lighter))))
+
 ;; Company auto-completion
 (use-package company
   :ensure t
@@ -427,6 +577,7 @@ The tab is added in a sorted position."
             (define-key company-active-map (kbd "C-n") 'company-select-next)
             (define-key company-active-map (kbd "C-p") 'company-select-previous)
             (define-key company-active-map (kbd "C-h") 'company-show-doc-buffer)
+            (define-key company-active-map (kbd "C-SPC") 'company-complete)
             (define-key company-active-map (kbd "M-.") 'company-show-location)))
 
 ;; Code snippets
@@ -471,6 +622,7 @@ The tab is added in a sorted position."
 ;; Flyspell spellchecker
 (use-package flyspell
   :ensure t
+  :diminish "FlyS"
   :bind ("C-," . flyspell-correct-word-before-point))
 
 ;; smart quotes and en/em-dashes
@@ -524,6 +676,32 @@ The tab is added in a sorted position."
          ("<C-S-left>" . buf-move-left)
          ("<C-S-right>" . buf-move-right)))
 
+;; ====================
+;; insert date and time
+
+(defvar current-date-time-format "%Y:%m:%d %H:%M:%S"
+  "Format of date to insert with `insert-current-date-time' func.
+See help of `format-time-string' for possible replacements")
+
+(defvar current-time-format "%a %H:%M:%S"
+  "Format of date to insert with `insert-current-time' func.
+Note the weekly scope of the command's precision.")
+
+(defun insert-current-date-time ()
+  "Insert the current date and time into current buffer.
+Uses `current-date-time-format' for the formatting the date/time."
+  (interactive)
+  (insert (format-time-string current-date-time-format (current-time)))
+  (insert "\n"))
+
+(defun insert-current-time ()
+  "Insert the current time (1-week scope) into the current buffer."
+  (interactive)
+  (insert (format-time-string current-time-format (current-time)))
+  (insert "\n"))
+
+
+
 
 ;;;;;;;;;;;
 ;; CEDET ;;
@@ -544,9 +722,29 @@ The tab is added in a sorted position."
 (add-hook 'semantic-mode-hook 'global-semantic-tag-folding-mode)
 (global-set-key (kbd  "C-c . C-f") 'senator-fold-tag-toggle)
 
+(require 'semantic/db-global)
+(semanticdb-enable-gnu-global-databases "tuareg-mode")
+
+;; ;; ctags
+(require 'semantic/ectags/db)
+(semantic-load-enable-all-ectags-support)
+
+;; ;; Extra CTAGS languages!
+(semantic-ectags-add-language-support javascript-mode "javascript" "fcmpv")
+(semantic-ectags-add-language-support tuareg-mode "ocaml" "cmMvptfCre")
+(semantic-ectags-add-language-support enh-ruby-mode "ruby" "cfmF")
+(semantic-ectags-add-language-support sml-mode "sml" "efcsrtv")
+(add-hook 'javascript-mode-hook 'semantic-ectags-simple-setup)
+(add-hook 'tuareg-mode-hook 'semantic-ectags-simple-setup)
+(add-hook 'enh-ruby-mode-hook'semantic-ectags-simple-setup)
+(add-hook 'sml-mode-hook 'semantic-ectags-simple-setup)
+
+
 ;; Load up semantic helpers
 (setq semantic-default-submodes
       '(global-semantic-idle-scheduler-mode
+        global-semantic-idle-summary-mode
+        global-semantic-idle-completions-mode
         global-semanticdb-minor-mode
         global-semantic-nidle-summary-mode
         global-semantic-mru-bookmark-mode
@@ -589,6 +787,7 @@ The tab is added in a sorted position."
       ecb-tip-of-the-day nil
       ecb-windows-width 0.2)
 
+
 (require 'ecb)
 
 (ecb-layout-define
@@ -615,6 +814,20 @@ The tab is added in a sorted position."
                                    (if (neo-global--window-exists-p)
                                        (neotree-show))
                                    (setq ecb-active nil)))
+;;;;;;;;;;;;
+;; Webkit ;;
+;;;;;;;;;;;;
+
+(add-to-list 'load-path "~/.emacs.d/lisp/webkit")
+
+(use-package epc
+  :ensure t)
+
+(require 'webkit)
+
+;; (native-package-install "pacman -S python-pyqt5" t)
+;; (native-package-install "pip3 install epc" t)
+;; (native-package-install "pip3 install python3-xlib" t)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -638,6 +851,8 @@ The tab is added in a sorted position."
   :ensure t)
 
 (defun markdown-mode-defaults ()
+  "The defaults for my fancy markdown setup."
+  
   ;; pretty mode-line name
   (setq mode-name "M⬇")
 
@@ -662,7 +877,6 @@ The tab is added in a sorted position."
   (set-window-buffer nil (current-buffer)))
 
 
-;; load our defaults
 (add-hook 'markdown-mode-hook 'markdown-mode-defaults)
 
 
@@ -772,8 +986,7 @@ The tab is added in a sorted position."
     ))
 
 (setf warp-format-converter-alist my-warp-converters)
-(unless (getenv "NODE_PATH")
-  (setenv "NODE_PATH" "/usr/lib/node_modules/"))
+(setenv "NODE_PATH" "/usr/lib/node_modules/")
 
 ;;(install-external-package "npm install -g marked")
 
@@ -848,6 +1061,7 @@ The tab is added in a sorted position."
   (rainbow-delimiters-mode +1))
 
 (add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-defaults)
+;;(add-hook 'emacs-lisp-mode-hook 'recompile-elc-on-save)
 (add-hook 'eldoc-mode-hook #'(lambda () (diminish 'eldoc-mode)))
 
 
@@ -884,6 +1098,13 @@ The tab is added in a sorted position."
              ;;     std::|
              (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)))
 
+(use-package google-c-style
+  :ensure t
+  :config (progn
+            (add-hook 'c-mode-common-hook 'google-set-c-style)
+            (add-hook 'c-mode-common-hook 'google-make-newline-indent)))
+
+
 ;;(install-external-package "pacman -S cpplint")
 
 ;;;;;;;;;;
@@ -898,10 +1119,6 @@ The tab is added in a sorted position."
          "Rakefile"
          "Gemfile" )
   :interpreter "ruby")
-
-(use-package rvm
-  :ensure t
-  :config (rvm-use-default))
 
 ;; YARDoc mode
 (use-package yard-mode
@@ -963,43 +1180,49 @@ The tab is added in a sorted position."
 ;; The OCaml major mode
 (use-package tuareg
   :ensure t
-  :mode ("\\.\\(?:ml[ily]?\\)\\'" . tuareg-mode)
+  :mode (("\\.ml\\'"  . tuareg-mode)
+         ("\\.mli\\'" . tuareg-mode)
+         ("\\.mll\\'" . tuareg-mode)
+         ("\\.mly\\'" . tuareg-mode))
   :config  (progn
              ;; make OCaml-generated files invisible to filename completion
              (mapc #'(lambda (ext) (add-to-list 'completion-ignored-extensions ext))
                    '(".cmo" ".cmx" ".cma" ".cmxa" ".cmi" ".cmxs" ".cmt" ".annot"))))
 
+(add-hook 'tuareg-mod #'(lambda () (interactive) (setq mode-name "ocaml")))
 
 ;; Indentation 'opam install ocp-indent'
 (use-package ocp-indent
   :ensure t)
+(add-hook 'tuareg-mode-hook #'(lambda () (interactive) (ocp-setup-indent)))
+
+;; Automatically load utop.el
+(autoload 'utop "utop" "Toplevel for OCaml" t)
+(autoload 'utop-setup-ocaml-buffer "utop" "Toplevel for OCaml" t)
+(add-hook 'tuareg-mode-hook 'utop-setup-ocaml-buffer)
+;;(autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
+;;(add-hook 'tuareg-mode-hook 'utop-minor-mode)
 
 ;; Merlin is used for completion
-;; requires native package: 'opam install ocp-indent'
-(use-package merlin
-  :ensure t
-  :mode ("\\.\\(?:ml[i]?\\)\\'" . merlin-mode)
-  :config (progn
-            (setq merlin-command (file-truename "~/.opam/system/bin/ocamlmerlin"))
-            (add-to-list 'company-backends 'merlin-company-backend)
-            ;; (add-hook 'merlin-mode-hook 'company-mode)
-            (add-hook 'tuareg-mode-hook 'merlin-mode)))  ; needed only if ocamlmerlin not already in your PATH
+;; requires native package: 'opam install merlin'
+(require 'merlin)
+(add-to-list 'company-backends 'merlin-company-backend)
+(add-hook 'tuareg-mode-hook 'merlin-mode t)
+(add-hook 'caml-mode-hook 'merlin-mode)
+(setq merlin-command 'opam)
 
-(use-package flycheck-ocaml
-  :ensure t
-  :config
-  (with-eval-after-load 'merlin
-    ;; Disable Merlin's own error checking
-    (setq merlin-error-after-save nil)
+;; (require 'flycheck-ocaml)
+;; (with-eval-after-load 'merlin
+;;   ;; Disable Merlin's own error checking
+;;   (setq merlin-error-after-save nil)
 
-    ;; Enable Flycheck checker
-    (flycheck-ocaml-setup)))
-
-(add-hook 'tuareg-mode-hook #'merlin-mode)
+;;   ;; Enable Flycheck checker
+;;   (flycheck-ocaml-setup))
 
 ;;(install-external-package "pacman -S ocaml" t)
 ;;(install-external-package "opam install ocp-indent")
 ;;(install-external-package "opam install merlin" nil "ocamlmerlin")
+;;(install-external-package "opam install utop" nil)
 
 ;;;;;;;;;;;;
 ;; Python ;;
@@ -1058,26 +1281,70 @@ The tab is added in a sorted position."
 (use-package haskell-mode
   :ensure t)
 
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
+(require 'haskell-interactive-mode)
+(require 'haskell-process)
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+
+(speedbar-add-supported-extension ".hs")
+
+(setq haskell-process-suggest-remove-import-lines t
+      haskell-process-auto-import-loaded-modules t
+      haskell-process-log t
+      haskell-process-type 'cabal-repl
+      haskell-tags-on-save t ;; requires hasktags
+      haskell-process-suggest-hoogle-imports t
+      haskell-stylish-on-save t  ;; requires stylish-haskell
+      haskell-indentation-show-indentations nil)
+
+(define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
+(define-key haskell-mode-map (kbd "C-`")     'haskell-interactive-bring)
+(define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
+(define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
+(define-key haskell-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
+(define-key haskell-mode-map (kbd "C-c C-k") 'haskell-interactive-mode-clear)
+(define-key haskell-mode-map (kbd "C-c c")   'haskell-process-cabal)
+(define-key haskell-mode-map (kbd "SPC")     'haskell-mode-contextual-space)
+(define-key haskell-mode-map (kbd "M-.")     'haskell-mode-jump-to-def-or-tag)
+(define-key haskell-mode-map (kbd "C-,")     'haskell-move-nested-left)
+(define-key haskell-mode-map (kbd "C-.")     'haskell-move-nested-right)
+(define-key haskell-mode-map [f8]            'haskell-navigate-imports)
+
+(require 'haskell-cabal)
+(define-key haskell-cabal-mode-map (kbd "C-`") 'haskell-interactive-bring)
+(define-key haskell-cabal-mode-map (kbd "C-c C-k") 'haskell-interactive-mode-clear)
+(define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
+(define-key haskell-cabal-mode-map (kbd "C-c c") 'haskell-process-cabal)
+
 ;; GHC-mod tools 'cabal install ghc-mod'
 (use-package ghc
-  :ensure t)
+  :ensure t
+  :config (progn
+            (autoload 'ghc-init "ghc" nil t)
+            (autoload 'ghc-debug "ghc" nil t)
+            (add-hook 'haskell-mode-hook (lambda () (ghc-init)))))
 
 ;; Haskell Flycheck:
 ;; * ghc
 ;; * hlint (cabal)
-;; * hdevtools (cabal)
 ;; * ghc-mod (cabal)
 
-(use-package flycheck-hdevtools
-  :ensure t)
+(require 'hs-lint)
+(setq hs-lint-replace-with-suggestions t)
 
-(use-package flycheck-ghcmod
-  :ensure t)
+(use-package flycheck-haskell
+  :ensure t
+  :config (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
+
+;; (use-package flycheck-ghcmod
+;;   :ensure t)
 
 ;;(install-external-package "pacman -S ghc" t)
 ;;(install-external-package "cabal install ghc-mod")
+;;(install-native-package "cabal install hasktags")
+;;(install-native-package "cabal install stylish-haskell")
 ;;(install-external-package "cabal install hlint")
-;;(install-external-package "cabal install hdevtools")
 
 
 ;;;;;;;;;;;
@@ -1109,3 +1376,4 @@ The tab is added in a sorted position."
 (provide 'init)
 
 ;;; init.el ends here
+(put 'upcase-region 'disabled nil)
