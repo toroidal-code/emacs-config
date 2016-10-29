@@ -8,15 +8,13 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
- '(compilation-message-face (quote default))
- '(cua-global-mark-cursor-color "#3aB1B8")
- '(cua-normal-cursor-color "#839496")
- '(cua-overwrite-cursor-color "#b58900")
- '(cua-read-only-cursor-color "#859900")
+ '(clang-format-style "Google")
+ '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("4cc896bc19f72a1228dbd869b1a41848e2412199bd415b67848ffb1f58b5306b" "4dd1b115bc46c0f998e4526a3b546985ebd35685de09bc4c84297971c822750e" default)))
+    ("d3d400ddcb2458a3859ae9126a14409120422f21f9fad90f0ca66c5596e5ba36" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "4cc896bc19f72a1228dbd869b1a41848e2412199bd415b67848ffb1f58b5306b" "4dd1b115bc46c0f998e4526a3b546985ebd35685de09bc4c84297971c822750e" default)))
  '(desktop-save-mode t)
+ '(display-time-mode t)
  '(ecb-compile-window-height 6)
  '(ecb-options-version "2.40")
  '(ecb-show-tags
@@ -77,91 +75,82 @@
  '(ede-project-directories
    (quote
     ("/home/kate/github/sedlex/src/lib" "/home/kate/github/sedlex" "~/github/sedlex/" "~/github/kiln/")))
- '(fci-rule-color "#073642")
+ '(flycheck-c/c++-googlelint-executable "/usr/bin/cpplint")
+ '(flycheck-checkers
+   (quote
+    (irony ocaml-merlin ada-gnat asciidoc c/c++-clang c/c++-gcc c/c++-cppcheck cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint d-dmd emacs-lisp emacs-lisp-checkdoc erlang eruby-erubis fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck groovy haml handlebars haskell-stack-ghc haskell-ghc haskell-hlint html-tidy jade javascript-eslint javascript-jshint javascript-gjslint javascript-jscs javascript-standard json-jsonlint json-python-json less luacheck lua perl perl-perlcritic php php-phpmd php-phpcs processing puppet-parser puppet-lint python-flake8 python-pylint python-pycompile r-lintr racket rpm-rpmlint rst-sphinx rst ruby-rubocop ruby-rubylint ruby ruby-jruby rust-cargo rust sass scala scala-scalastyle scss-lint scss sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim sql-sqlint tex-chktex tex-lacheck texinfo verilog-verilator xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby c/c++-googlelint)))
+ '(flycheck-haskell-hlint-executable "/home/kate/.cabal/bin/hlint")
  '(ggtags-global-output-format (quote grep))
  '(ggtags-use-idutils t)
+ '(global-flycheck-mode t)
+ '(global-semantic-idle-summary-mode t)
  '(helm-imenu-fuzzy-match t)
  '(helm-recentf-fuzzy-match t)
- '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
- '(highlight-symbol-colors
-   (--map
-    (solarized-color-blend it "#002b36" 0.25)
-    (quote
-     ("#b58900" "#3aB1B8" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
- '(highlight-symbol-foreground-color "#93a1a1")
- '(highlight-tail-colors
-   (quote
-    (("#073642" . 0)
-     ("#546E00" . 20)
-     ("#00736F" . 30)
-     ("#00629D" . 50)
-     ("#7B6000" . 60)
-     ("#8B2C02" . 70)
-     ("#93115C" . 85)
-     ("#073642" . 100))))
- '(hl-bg-colors
-   (quote
-    ("#7B6000" "#8B2C02" "#990A1B" "#93115C" "#3F4D91" "#00629D" "#00736F" "#546E00")))
- '(hl-fg-colors
-   (quote
-    ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
- '(indent-tabs-mode t)
+ '(hs-lint-command "/home/kate/.cabal/bin/hlint")
+ '(indent-tabs-mode nil)
+ '(irony-additional-clang-options (quote ("-std=c++14")))
+ '(irony-lighter " i")
  '(ispell-local-dictionary "american")
  '(ispell-local-dictionary-alist
    (quote
     (("american" "[[:alpha:]]" "[^[:alpha:]]" "['’]" t
       ("-d" "en_US-w_accents")
       nil utf-8))))
- '(magit-diff-use-overlays nil)
+ '(js-indent-level 2)
+ '(package-selected-packages
+   (quote
+    (cmake-ide exwm-x caml company concurrent ctable dash deferred evil f flycheck git-commit haml-mode haskell-mode hydra inf-ruby irony macrostep popup s undo-tree cmake-mode helm-core magit-popup rich-minority seq slime sly with-editor yasnippet yard-mode yaml-mode xterm-color web-mode use-package typo tuareg sublimity srefactor sr-speedbar solarized-theme sml-modeline sml-mode smartparens smart-mode-line sly-company slime-company slim-mode shut-up sass-mode rvm rubocop rtags rspec-mode robe request rainbow-mode rainbow-delimiters px powerline popwin pandoc-mode package-utils package-build ocp-indent neotree mode-icons mips-mode markdown-mode magit lua-mode latex-preview-pane late-night-theme key-chord julia-mode js2-mode iedit ido-ubiquitous helm google-c-style git ghc ggtags flycheck-irony flycheck-haskell flycheck-google-cpplint exec-path-from-shell evil-god-state ert-expectations epc emacs-eclim ecb diff-hl csharp-mode cpputils-cmake company-shell company-irony company-c-headers coffee-mode cmake-font-lock clang-format bundler buffer-move bison-mode auto-complete aurel)))
  '(paradox-github-token t)
- '(pos-tip-background-color "#073642")
- '(pos-tip-foreground-color "#93a1a1")
  '(powerline-default-separator (quote utf-8))
  '(powerline-height 20)
  '(projectile-global-mode t)
  '(safe-local-variable-values
    (quote
-    ((eval when
+    ((eval ignore-errors "Write-contents-functions is a buffer-local alternative to before-save-hook"
+           (add-hook
+            (quote write-contents-functions)
+            (lambda nil
+              (delete-trailing-whitespace)
+              nil))
+           (require
+            (quote whitespace))
+           "Sometimes the mode needs to be toggled off and on."
+           (whitespace-mode 0)
+           (whitespace-mode 1))
+     (whitespace-line-column 0.8)
+     (whitespace-style face tabs trailing lines-tail)
+     (cmake-ide-dir . "/home/kate/github/brandt-gc/build")
+     (cmake-ide-dir . "/home/kate/github/cppspec/build")
+     (cmake-ide-dir . "/home/kate/github/cppspec")
+     (eval when
            (fboundp
             (quote rainbow-mode))
            (rainbow-mode 1)))))
  '(scroll-bar-mode nil)
- '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
+ '(semantic-decoration-styles
+   (quote
+    (("semantic-tag-folding")
+     ("semantic-decoration-on-includes" . t)
+     ("semantic-tag-boundary" . t))))
+ '(semantic-ectags-program-list
+   (quote
+    ("ctags-exuberant" "ectags" "ctags" "/usr/bin/ctags")))
+ '(sml-indent-level 2)
+ '(sml/theme (quote dark))
  '(sp-base-key-bindings (quote paredit))
- '(term-default-bg-color "#002b36")
- '(term-default-fg-color "#839496")
+ '(speedbar-show-unknown-files t)
+ '(sr-speedbar-default-width 25)
+ '(sr-speedbar-max-width 30)
+ '(sr-speedbar-right-side nil)
+ '(sublimity-attractive-centering-width 79)
+ '(timeclock-mode-line-display t)
  '(tool-bar-mode nil)
- '(vc-annotate-background nil)
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#dc322f")
-     (40 . "#c85d17")
-     (60 . "#be730b")
-     (80 . "#b58900")
-     (100 . "#a58e00")
-     (120 . "#9d9100")
-     (140 . "#959300")
-     (160 . "#8d9600")
-     (180 . "#859900")
-     (200 . "#6ca13d")
-     (220 . "#5fa45c")
-     (240 . "#53a97a")
-     (260 . "#46ad99")
-     (280 . "#3aB1B8")
-     (300 . "#32a1c2")
-     (320 . "#2e9ac7")
-     (340 . "#2a92cc")
-     (360 . "#268bd2"))))
- '(vc-annotate-very-old-color nil)
- '(weechat-color-list
-   (quote
-    (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#3aB1B8" "#839496" "#657b83"))))
+ '(web-mode-markup-indent-offset 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-variable-tag ((t (:foreground "blue1" :weight bold :height 1.0 :family "Liberation Mono"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((t (:family "Open Sans")))))
 
@@ -296,6 +285,13 @@ Optionally, you can provide an ICON and a SOUND to be played."
 (global-set-key (kbd "C-?") 'help-command)
 (global-set-key (kbd "M-?") 'mark-paragraph)
 
+;; Bind the <menu> key to opening a menu-bar dropdown,
+;; in in the event of disabling the menu-bar.
+(global-set-key (kbd "<menu>") 'menu-bar-open)
+
+;; Bind C-x w to 'count-words'
+(global-set-key (kbd "C-x w") 'count-words)
+
 ;; Just, don't truncate lines, please
 (setq-default truncate-lines 0)
 
@@ -310,7 +306,7 @@ Optionally, you can provide an ICON and a SOUND to be played."
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; Line-numbering
-(if (fboundp 'global-linum-mode) (global-linum-mode))
+(add-hook 'prog-mode-hook #'(lambda () (linum-mode +1)))
 
 (require 'cus-edit)
 (set-face-attribute 'custom-face-tag nil
@@ -326,7 +322,7 @@ Optionally, you can provide an ICON and a SOUND to be played."
 ;; Packages ;;
 ;;;;;;;;;;;;;;
 
-(require 'package-prioritize)
+;; (require 'package-prioritize)
 
 (package-initialize) ;; You might already have this line
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -343,12 +339,14 @@ Optionally, you can provide an ICON and a SOUND to be played."
   (package-install 'use-package))
 
 (require 'use-package)
+(setq use-package-always-pin "melpa-stable")
+(setq use-package-always-ensure nil)
+
 (require 'diminish)
 (require 'bind-key)
 
 ;; Package-utils helpers
-(use-package package-utils
-  :ensure t)
+(use-package package-utils)
 
 ;; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -370,6 +368,30 @@ Optionally, you can provide an ICON and a SOUND to be played."
            (memq system-type '(gnu gnu/linux darwin windows-nt)))
   (exec-path-from-shell-initialize))
 
+
+(use-package xterm-color
+  :ensure t)
+
+;; comint install
+(progn (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
+       (setq comint-output-filter-functions (remove 'ansi-color-process-output comint-output-filter-functions))
+       (setq font-lock-unfontify-region-function 'xterm-color-unfontify-region))
+
+;; ;; comint uninstall
+;; (progn (remove-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
+;;        (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
+;;        (setq font-lock-unfontify-region-function 'font-lock-default-unfontify-region))
+
+(require 'eshell)
+
+(add-hook 'eshell-mode-hook
+          (lambda ()
+            (setq xterm-color-preserve-properties t)))
+
+(add-to-list 'eshell-preoutput-filter-functions 'xterm-color-filter)
+(setq eshell-output-filter-functions (remove 'eshell-handle-ansi-color eshell-output-filter-functions))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;       AESTHETICS        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -383,45 +405,56 @@ Optionally, you can provide an ICON and a SOUND to be played."
 ;;   :ensure t
 ;;   :config (load-theme 'github-theme t t))
 
+;; Base16
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/base16/")
+(load-theme 'base16-default-light t t)
+
+;; Base16
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/github/")
+(load-theme 'github t t)
+
 ;; Solarized
-(add-to-list 'load-path "~/.emacs.d/themes/solarized")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/solarized/")
+(use-package solarized-theme :ensure t)
 (setq solarized-distinct-fringe-background t) ;; make the fringe stand out from the background
 (setq solarized-use-less-bold t) ;; use less bolding
 (load-theme 'solarized-dark t t)
 (load-theme 'solarized-light t t)
 
 ;; Ample
-(use-package ample-theme
-  :ensure t
-  :config (progn
-            (load-theme 'ample t t)
-            (load-theme 'ample-flat t t)
-            (load-theme 'ample-light t t)))
+;; (use-package ample-theme
+;;   :config (progn
+;;             (load-theme 'ample t t)
+;;             (load-theme 'ample-flat t t)
+;;             (load-theme 'ample-light t t)))
+
+(use-package late-night-theme
+  :config (load-theme 'late-night t t))
 
 ;; Monokai
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/monokai/")
 (load-theme 'monokai-extended t t)
 
 ;; cycle-themes
-(add-to-list 'custom-theme-load-path "~/.emacs.d/lisp/cycle-themes")
+(add-to-list 'load-path "~/.emacs.d/lisp/cycle-themes")
 (require 'cycle-themes)
 (setq cycle-themes-theme-list
-      '(leuven monokai-extended solarized-dark))
+      '(leuven github monokai-extended late-night solarized-dark solarized-light))
 ;; (define-key cycle-themes-mode-map (kbd "C-c C-c C-t") 'cycle-themes)
 
 
 
 (defun flatten-mode-line ()
-  (set-face-attribute 'mode-line nil
-                      :box (face-background 'mode-line)
-                      :underline (unless (eq (face-attribute 'mode-line :underline) 'unspecified)
-                                   (face-background 'mode-line)))
+  (set-face-attribute
+   'mode-line nil
+   :box (face-background 'mode-line)
+   :underline (unless (eq (face-attribute 'mode-line :underline) 'unspecified)
+		(face-background 'mode-line)))
 
-  (set-face-attribute 'mode-line-inactive nil
-                      :box (face-background 'mode-line)
-                      :underline (unless (eq (face-attribute 'mode-line :underline) 'unspecified)
-                                   (face-background 'mode-line))))
+  (set-face-attribute
+   'mode-line-inactive nil
+   :box (face-background 'mode-line)
+   :underline (unless (eq (face-attribute 'mode-line :underline) 'unspecified)
+		(face-background 'mode-line))))
 
 (defun normalize-fringes ()
   "Make the fringes the same color as the background."
@@ -430,8 +463,15 @@ Optionally, you can provide an ICON and a SOUND to be played."
     (set-face-attribute 'fringe nil :background (face-background 'default))
     (set-face-attribute 'linum nil :background (face-background 'default))))
 
+(defun set-term-colors ()
+  "Set the term colors to the same as the theme"
+  (set-face-attribute 'term nil
+		      :background (face-background 'default)
+		      :foreground (face-foreground 'default)))
+
 (add-hook 'cycle-themes-after-cycle-hook #'flatten-mode-line)
 (add-hook 'cycle-themes-after-cycle-hook #'normalize-fringes)
+;; (add-hook 'cycle-themes-after-cycle-hook #'set-term-colors)
 
 (cycle-themes-mode)
 
@@ -443,17 +483,23 @@ Optionally, you can provide an ICON and a SOUND to be played."
 
 
 ;; A fancy tab-bar
+(add-to-list 'load-path "~/.emacs.d/lisp/tabbar")
+(add-to-list 'load-path "~/.emacs.d/lisp/tabbar-ruler")
 (use-package tabbar-ruler
-  :ensure t
+  :pin manual
   :init (progn
           (setq tabbar-use-images nil)
           (setq tabbar-ruler-global-tabbar t)
           (setq tabbar-ruler-movement-timer-delay 1000000))
   :config (setq tabbar-buffer-groups-function 'tabbar-buffer-groups))
 
-
 (global-key-binding (kbd "<mouse-9>") #'((lambda () (interactive) (tabbar-forward))))
 (global-key-binding (kbd "<mouse-8>") #'((lambda () (interactive) (tabbar-backward))))
+
+(global-key-binding (kbd "C-c C-H-t") #'((lambda () (interactive) (tabbar-forward-group))))
+(global-key-binding (kbd "C-c C-H-h") #'((lambda () (interactive) (tabbar-backward))))
+(global-key-binding (kbd "C-c C-H-n") #'((lambda () (interactive) (tabbar-forward))))
+(global-key-binding (kbd "C-c C-H-c") #'((lambda () (interactive) (tabbar-backward-group))))
 
 ;; A custom function to make the tabs sorted alphabetically
 (defun tabbar-add-tab (tabset object &optional append_ignored)
@@ -489,6 +535,16 @@ The tab is added in a sorted position."
 
 
 
+(defun what-face (pos)
+  (interactive "d")
+  (let ((face (or (get-char-property (point) 'read-face-name)
+                  (get-char-property (point) 'face))))
+    (if face (message "Face: %s" face) (message "No face at %d" pos))))
+
+
+(use-package sr-speedbar
+  :bind ("C-c s" . sr-speedbar-toggle))
+
 ;;;;;;;;;;;;;
 ;; Generic ;;
 ;;;;;;;;;;;;;
@@ -500,79 +556,96 @@ The tab is added in a sorted position."
 ;;   :ensure t)
 ;; (require 'my-helm-config)
 
+(use-package s
+  :config (require 's))
+
 (use-package ido-ubiquitous
   :config (ido-ubiquitous-mode +1))
 
 (ido-mode +1)
 
 (use-package key-chord
-  :ensure t
   :config (key-chord-mode +1))
 
 ;; Extensible Vi Layer
 (use-package evil
-  :ensure
   :config (key-chord-define evil-insert-state-map  "ht" 'evil-normal-state))
 
 ;; God mode
 (use-package god-mode
-  :ensure t
   :bind ("C-." . god-local-mode))
 
 ;; Ensure god-mode and evil work well together
 (use-package evil-god-state
-  :ensure t
   :config (progn
             (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
             (evil-define-key 'god global-map [escape] 'evil-god-state-bail)))
 
-;; Projectile
-(use-package projectile
-  :ensure t)
+(use-package magit
+  :config (progn
+	    (setq magit-last-seen-setup-instructions "1.4.0")))
+
+
+;; Hl-line
+(use-package diff-hl
+  :config (add-hook 'prog-mode-hook 'diff-hl-mode))
+
 
 ;; Etags for emacs
-(use-package ggtags
-  :ensure t)
+(use-package ggtags)
 
 ;; Popup help buffers
 (use-package popwin
-  :ensure t
   :config (progn
             (push 'semantic-symref-results-mode popwin:special-display-config)
             (popwin-mode +1)))
 
+(use-package sublimity
+  :init (progn
+	  (require 'sublimity)
+	  ;; (require 'sublimity-scroll)
+	  ;; (require 'sublimity-map)
+	  (require 'sublimity-attractive)
+	  )
+  :bind ("C-c C-s C-s" . sublimity-mode)
+  :config (progn
+	    ;;(sublimity-map-set-delay nil)
+	    ))
+
+;; (add-hook 'sublimity-map-setup-hook #'(lambda () (interactive)
+;; 					(visual-line-mode)
+;; 					;;(tabbar-local-mode)
+;; 					))
+
 ;; Flycheck linter
 (use-package flycheck
-  :ensure t
   :config (add-hook 'after-init-hook #'global-flycheck-mode))
 
 ;; Popup
-(use-package popup
-  :ensure t)
+(use-package popup)
 
 ;; Pretty parentheses
-(use-package rainbow-delimiters
-  :ensure t)
+(use-package rainbow-delimiters)
 
 ;; Smart parentheses
 (use-package smartparens
-  :ensure t
   :bind ("C-c C-s s" . smartparens-strict-mode)
   :config (progn
             (require 'smartparens-config)
             (smartparens-global-mode 1)))
 
 (add-hook 'smartparens-mode-hook #'(lambda () (interactive)
-                                     (let ((lighter (if smartparens-strict-mode "sp/s" "sp")))
+                                     (let ((lighter (if smartparens-strict-mode "()/s" "()")))
                                        (diminish 'smartparens-mode lighter))))
 
 ;; Company auto-completion
 (use-package company
-  :ensure t
   :diminish company-mode
   :config (progn
             (add-hook 'after-init-hook 'global-company-mode)
-            (setq company-idle-delay 0)
+	    (setq company-tooltip-limit 20)                      ; bigger popup window
+	    (setq company-idle-delay .3)                         ; decrease delay before autocompletion popup shows
+	    (setq company-echo-delay 0)                          ; remove annoying blinking
             ;; Saner selection key
             (define-key company-active-map (kbd "C-n") 'company-select-next)
             (define-key company-active-map (kbd "C-p") 'company-select-previous)
@@ -582,24 +655,23 @@ The tab is added in a sorted position."
 
 ;; Code snippets
 (use-package yasnippet
-  :ensure t
   :diminish yas-minor-mode
-  :config (yas-global-mode))
+  :config (progn
+	    (yas-reload-all)
+	    (yas-global-mode)))
 
 ;; Undo-tree
 (use-package undo-tree
-  :ensure t
-  :diminish "ut")
+  :diminish "undotree" ;;"⎌"
+  )
 
 ;; File browser
 (use-package neotree
-  :ensure t
   :init (setq neo-theme 'nerd)
   :config (progn
             (setq neo-persist-show nil)))
 
-(use-package aurel
-  :ensure t)
+(use-package aurel)
 
 ;; Whitespace-mode
 ;; (use-package whitespace
@@ -616,26 +688,30 @@ The tab is added in a sorted position."
 ;;             (global-whitespace-mode)))
 
 ;; Multiple-word edit bound to C-;
-(use-package iedit
-  :ensure t)
+(use-package iedit)
 
 ;; Flyspell spellchecker
 (use-package flyspell
-  :ensure t
   :diminish "FlyS"
   :bind ("C-," . flyspell-correct-word-before-point))
 
+;; Thesaurus
+(require 'synonymous)
+
 ;; smart quotes and en/em-dashes
-(use-package typo
-  :ensure t
-  :diminish "”“")
+(use-package typo :diminish "”“")
 
 ;; A simpler smart quotes mode
 (autoload 'smart-quotes-mode "smart-quotes")
 
+;; Latex-fragments preview
+(use-package px
+  :config (progn
+            (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.5)))
+  :bind ("C-c C-x C-l" . px-toggle))
+
 ;; Pandoc conversion
-(use-package pandoc-mode
-  :ensure t)
+(use-package pandoc-mode)
 
 ;; ;; Langtool
 ;; (use-package langtool
@@ -670,11 +746,12 @@ The tab is added in a sorted position."
 
 ;; Swap buffer positions
 (use-package buffer-move
-  :ensure t
   :bind (("<C-S-up>" . buf-move-up)
          ("<C-S-down>" . buf-move-down)
          ("<C-S-left>" . buf-move-left)
          ("<C-S-right>" . buf-move-right)))
+
+
 
 ;; ====================
 ;; insert date and time
@@ -706,6 +783,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;;;;;;;;;;
 ;; CEDET ;;
 ;;;;;;;;;;;
+(setq semantic-ectags-program "/usr/bin/ctags")
 
 (el-get-bundle cedet)
 (add-to-list 'load-path "~/.emacs.d/el-get/cedet/contrib")
@@ -732,11 +810,11 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;; ;; Extra CTAGS languages!
 (semantic-ectags-add-language-support javascript-mode "javascript" "fcmpv")
 (semantic-ectags-add-language-support tuareg-mode "ocaml" "cmMvptfCre")
-(semantic-ectags-add-language-support enh-ruby-mode "ruby" "cfmF")
+;;(semantic-ectags-add-language-support ruby-mode "ruby" "cfmF")
 (semantic-ectags-add-language-support sml-mode "sml" "efcsrtv")
 (add-hook 'javascript-mode-hook 'semantic-ectags-simple-setup)
 (add-hook 'tuareg-mode-hook 'semantic-ectags-simple-setup)
-(add-hook 'enh-ruby-mode-hook'semantic-ectags-simple-setup)
+;; (add-hook 'ruby-mode-hook 'semantic-ectags-simple-setup)
 (add-hook 'sml-mode-hook 'semantic-ectags-simple-setup)
 
 
@@ -749,7 +827,7 @@ Uses `current-date-time-format' for the formatting the date/time."
         global-semantic-nidle-summary-mode
         global-semantic-mru-bookmark-mode
         ;; global-cedet-m3-minor-mode
-        global-semantic-decoration-mode
+        ;; global-semantic-decoration-mode
         ;; global-semantic-stickyfunc-mode
         ;; global-semantic-idle-completions-mode
         global-semantic-highlight-func-mode
@@ -761,9 +839,15 @@ Uses `current-date-time-format' for the formatting the date/time."
 (semantic-load-enable-gaudy-code-helpers-1)
 (semantic-load-enable-excessive-code-helpers-1)
 
+(use-package srefactor
+  :ensure t
+  :init (require 'srefactor)
+  :config (progn
+            (define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
+            (define-key c++-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)))
+
 ;; ECB
 (use-package ecb
-  :ensure t
   :bind  (("\C-c \C-\\" . ecb-toggle)
           ("\C-c c \\"  . ecb-toggle-ecb-windows)))
 
@@ -820,8 +904,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (add-to-list 'load-path "~/.emacs.d/lisp/webkit")
 
-(use-package epc
-  :ensure t)
+(use-package epc)
 
 (require 'webkit)
 
@@ -829,6 +912,85 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;; (native-package-install "pip3 install epc" t)
 ;; (native-package-install "pip3 install python3-xlib" t)
 
+
+
+(require 'focal)
+
+;;(require 'exwm)
+;;(require 'exwm-systemtray)
+;;(exwm-systemtray-enable)
+;;(require 'exwm-config)
+;;(exwm-config-default)
+(defun exwm-config-custom ()
+  "Customized configuration of EXWM."
+
+  ;; Set the initial workspace number.
+  (setq exwm-workspace-number 4)
+
+  ;; Make class name the buffer name
+  (add-hook 'exwm-update-class-hook
+            (lambda ()
+              (exwm-workspace-rename-buffer exwm-class-name)))
+
+  ;; 's-r': Reset
+  (exwm-input-set-key (kbd "s-r") #'exwm-reset)
+
+  ;; 's-w': Switch workspace
+  (exwm-input-set-key (kbd "s-w") #'exwm-workspace-switch)
+
+  ;; 's-left': Switch workspace left
+  (exwm-input-set-key (kbd "s-<left>") #'(lambda () (interactive)
+                                           (let ((new-idx (- exwm-workspace-current-index 1)))
+                                             (exwm-workspace-switch 
+                                              (if (< new-idx 0)
+                                                  (- (exwm-workspace--count) 1)
+                                                new-idx)))))
+
+  ;; 's-right': Switch workspace right
+  (exwm-input-set-key (kbd "s-<right>") #'(lambda () (interactive)
+                                            (exwm-workspace-switch (mod (+ exwm-workspace-current-index 1)
+                                                                        (exwm-workspace--count)))))
+
+  ;; 's-N': Switch to certain workspace
+  (dotimes (i 10)
+    (exwm-input-set-key (kbd (format "s-%d" i))
+                        `(lambda ()
+                           (interactive)
+                           (exwm-workspace-switch-create ,i))))
+
+  ;; 's-&': Launch application
+  (exwm-input-set-key (kbd "s-&")
+                      (lambda (command)
+                        (interactive (list (read-shell-command "$ ")))
+                        (start-process-shell-command command nil command)))
+
+  ;; Line-editing shortcuts
+  (exwm-input-set-simulation-keys
+   '(([?\C-b] . left)
+     ([?\C-f] . right)
+     ([?\C-p] . up)
+     ([?\C-n] . down)
+     ([?\C-a] . home)
+     ([?\C-e] . end)
+     ([?\M-v] . prior)
+     ([?\C-v] . next)
+     ([?\C-d] . delete)
+     ([?\C-k] . (S-end delete))))
+
+  ;; Configure Ido
+  (ido-mode 1)
+  (add-hook 'exwm-init-hook #'exwm-config--fix/ido-buffer-window-other-frame)
+
+  ;; Other configurations
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (fringe-mode 1)
+  ;; Enable EXWM
+  ;;(exwm-enable)
+  )
+
+;;(exwm-config-custom)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;       PROGRAMMING LANGUAGES      ;;
@@ -847,15 +1009,12 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;; Markdown ;;
 ;;;;;;;;;;;;;;
 
-(use-package markdown-mode
-  :ensure t)
+(use-package markdown-mode)
 
 (defun markdown-mode-defaults ()
   "The defaults for my fancy markdown setup."
-  
   ;; pretty mode-line name
   (setq mode-name "M⬇")
-
   ;; Remove these
   (company-mode -1)
   (smartparens-mode -1)
@@ -863,6 +1022,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   (whitespace-mode -1)
   (flycheck-mode -1)
   (linum-mode -1)
+;;  (projectile-mode -1)
 
   ;; Minor modes
   (visual-line-mode +1)
@@ -876,59 +1036,57 @@ Uses `current-date-time-format' for the formatting the date/time."
   (setq right-margin-width 2)
   (set-window-buffer nil (current-buffer)))
 
-
 (add-hook 'markdown-mode-hook 'markdown-mode-defaults)
 
+;; Special markdown mode. Used for writing major pieces of prose.
+;; ODTs are preffered for generating output for sites like
+;; Fanfiction.net
+(defun writer-mode ()
+  (markdown-mode)
+  (focal-mode)
+
+  ;; Just use pandoc's --smart flag.
+  ;; It's better on my eyes anyways.
+  ;; (typo-mode +1)
+  ;; (smart-quotes-mode +1)
+
+  ;; We generate odt's by default for upload to sites like Fanfiction.net
+  (cl-loop for (opt . val) in
+	   '((smart . t)
+	     (read . "markdown")
+	     (write . "odt")
+	     (output . t))
+	   do (pandoc--set opt val))
+  (setq buffer-face-mode-face '(:family "Cambria"
+					:height 135
+					:width semi-condensed))
+  (buffer-face-mode))
+
+;; Notes are similar, but generate htmls instead
+;; Usually though, we just use warp-mode
+(defun note-mode ()
+  (require 'px)
+  (markdown-mode)
+  (pandoc-set-write "html")
+  (pandoc-set-output t)
+  (setq buffer-face-mode-face '(:family "Cambria"
+					:height 135
+					:width semi-condensed))
+  (buffer-face-mode))
 
 ;; Custom file extensions and modes
 (defvar custom-markdown-modes
-  '(
-    ;; Special markdown mode. Used for writing major pieces of prose.
-    ;; ODTs are preffered for generating output for sites like
-    ;; Fanfiction.net
-    ("\\.writer\\'" .
-     (lambda ()
-
-       (markdown-mode)
-
-       ;; Just use pandoc's --smart flag.
-       ;; It's better on my eyes anyways.
-       ;; (typo-mode +1)
-       ;; (smart-quotes-mode +1)
-
-       ;; We generate odt's by default for upload to sites like Fanfiction.net
-       (cl-loop for (opt . val) in
-             '((smart . t)
-               (read . "markdown")
-               (write . "odt")
-               (output-dir . "/home/kate/Documents/Pandoc Output"))
-             do (pandoc--set opt val))
-       (setq buffer-face-mode-face '(:family "Cambria"
-                                     :height 135
-                                     :width semi-condensed))
-       (buffer-face-mode)))
-
-
-    ;; Notes are similar, but generate htmls instead
-    ;; Usually though, we just use warp-mode
-    ("\\.note\\'" . (lambda ()
-                      (markdown-mode)
-                      (pandoc-set-write "html")
-                      (setq buffer-face-mode-face '(:family "Cambria"
-                                                            :height 135
-                                                            :width semi-condensed))
-                      (buffer-face-mode)))
-
+  '(("\\.writer\\'" . writer-mode)
+    ("\\.note\\'" . note-mode)
     ;; Obviously a github repo. And if not, well it's pretty anyways
-    ("^README.md$" . (lambda ()
-                       (gfm-mode)
-                       (setq buffer-face-mode-face '(:family "Cambria"
-                                                             :height 135
-                                                             :width semi-condensed))
-                       (buffer-face-mode)))))
+    ("^README.md$" . gfm-mode)))
 
 (dolist (elt custom-markdown-modes)
   (add-to-list 'auto-mode-alist elt))
+
+(modify-coding-system-alist 'file "\\.md\\'" 'utf-8)
+(modify-coding-system-alist 'file "\\.writer\\'" 'utf-8)
+(modify-coding-system-alist 'file "\\.note\\'" 'utf-8)
 
 ;;;;;; WARP ;;;;;;
 
@@ -941,13 +1099,13 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 ;; Set markdown converter(s)
 (setf my-warp-converters
-
   ;; Written works need 'smart' quotes and proper dashes.
   '(("\\.writer$" t (lambda ()
                      `("pandoc"
                        "--smart"
                        "--read=markdown"
                        "--write=html"
+		       "--mathjax"
                        ,(concat "--template="
                                 (expand-file-name "~/.emacs.d/extra/pandoc/default.html"))
                        ,(concat "--css="
@@ -963,13 +1121,14 @@ Uses `current-date-time-format' for the formatting the date/time."
                       "--toc"
                       "--read=markdown"
                       "--write=html"
+		      "--mathjax"
                       ,(concat "--template="
                                (expand-file-name "~/.emacs.d/extra/pandoc/default.html"))
                       ,(concat "--css="
                                (expand-file-name "~/.emacs.d/extra/pandoc/note.css"))
                       )))
 
-    ("\\README.md$" t (lambda ()
+    ("README.md$" t (lambda ()
                    `("pandoc"
                      "--read=markdown"
                      "--write=html"
@@ -1003,20 +1162,23 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (add-hook 'lisp-mode-hook 'lisp-coding-defaults)
 
+(use-package srefactor
+  :init (progn
+	  (require 'srefactor)
+	  (require 'srefactor-lisp)))
+
 ;;;;;;;;;;;;;;;;;
 ;; Common Lisp ;;
 ;;;;;;;;;;;;;;;;;
 
 ;; SLY vs SLIME
-(use-package sly
-  :ensure t)
+(use-package slime)
 
 (setq inferior-lisp-program (or (executable-find "clisp")
                                 (executable-find "sbcl")))
 
-(use-package sly-company
-  :ensure t
-  :config (add-hook 'sly-mode-hook 'sly-company-mode))
+(use-package slime-company
+  :config (add-hook 'slime-mode-hook 'slime-company-mode))
 
 ;;(install-external-package "pacman -S clisp" t)
 ;;(install-external-package "pacman -S sbcl" t)
@@ -1069,17 +1231,20 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;; C/C++ ;;
 ;;;;;;;;;;;
 
+(add-hook 'c-initialization-hook
+	  #'(lambda ()
+	      (define-key c-mode-base-map [(meta o)]
+		'ff-get-other-file)))
+
 ;; Flycheck checkers:
 ;; * cpplint (native package manager)
 
 ;; Bison/Yacc
-(use-package bison-mode
-  :ensure t
+(use-package bison-mode 
   :mode "\\.y[y]?$")
 
 ;; Irony static analysis engine
 (use-package irony
-  :ensure t
   :defer t
   :config (progn
             (add-hook 'c-mode-hook 'irony-mode)
@@ -1088,32 +1253,182 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 ;; Completion backend for company
 (use-package company-irony
-   :ensure t
-   :config (progn
-             (eval-after-load 'company
-               '(add-to-list 'company-backends 'company-irony))
-
-             ;; (optional) adds CC special commands to `company-begin-commands' in order to
-             ;; trigger completion at interesting places, such as after scope operator
-             ;;     std::|
-             (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)))
-
-(use-package google-c-style
   :ensure t
   :config (progn
-            (add-hook 'c-mode-common-hook 'google-set-c-style)
-            (add-hook 'c-mode-common-hook 'google-make-newline-indent)))
+	    (eval-after-load 'company
+	      '(add-to-list 'company-backends 'company-irony))))
+
+(use-package flycheck-irony
+  :config (with-eval-after-load 'flycheck
+	    (require 'flycheck-irony)
+	    (add-hook 'flycheck-mode-hook #'flycheck-irony-setup)
+	    (flycheck-add-next-checker 'irony '(warning . c/c++-cppcheck))))
+
+
+(use-package flycheck-google-cpplint
+  :config (eval-after-load 'flycheck
+	    '(progn
+	       (require 'flycheck-google-cpplint)
+	       ;; Add Google C++ Style checker.
+	       ;; In default, syntax checked by Clang and Cppcheck.
+	       (flycheck-add-next-checker 'c/c++-cppcheck
+					  '(warning . c/c++-googlelint)))))
+;; (use-package google-c-style
+;;   :config (progn
+;;             (add-hook 'c-mode-common-hook 'google-set-c-style)
+;;             (add-hook 'c-mode-common-hook 'google-make-newline-indent)))
+
+(use-package clang-format
+  :config (progn
+	    (setq clang-format-style "Google")
+	    (add-hook 'before-save-hook
+		      #'(lambda ()
+			  (interactive)
+			  (let ((file-name (buffer-file-name)))
+			    (when (and file-name
+				       (or (eq major-mode 'c-mode)
+					   (eq major-mode 'c++-mode)
+					   (eq major-mode 'cc-mode))
+				       (not (s-suffix? "_spec"
+						       (file-name-base file-name))))
+			      (clang-format-buffer)))))))
+
+(add-hook 'c-mode-common-hook
+	  #'(lambda ()
+	      (interactive)
+	      (let ((file-name (buffer-file-name)))
+		(when (and file-name
+			   (or (eq major-mode 'c-mode)
+			       (eq major-mode 'c++-mode)
+			       (eq major-mode 'cc-mode))
+			   (s-suffix? "_spec"
+				      (file-name-base file-name)))
+		  (setq c-syntactic-indentation nil)))))
+
+;; (use-package rtags
+;;   :init (require 'rtags))
+
+;; (use-package cmake-ide
+;;   :config (progn
+;; 	    (setq cmake-ide-rdm-executable "/usr/bin/rdm")
+;; 	    (setq cmake-ide-rc-executable "/usr/bin/rc")
+;; 	    (cmake-ide-setup)))
+
+(use-package cpputils-cmake
+  :config (progn
+	    (add-hook 'c-mode-common-hook
+		      (lambda ()
+			(if (derived-mode-p 'c-mode 'c++-mode)
+			    (cppcm-reload-all)
+			  )))
+
+	    ;; ;; OPTIONAL, somebody reported that they can use this package with Fortran
+	    ;; (add-hook 'c90-mode-hook (lambda () (cppcm-reload-all)))
+
+	    ;; OPTIONAL, avoid typing full path when starting gdb
+	    (global-set-key (kbd "C-c C-g")
+			    #'(lambda ()
+				(interactive)
+				(gud-gdb (concat "gdb --fullname "
+						 (cppcm-get-exe-path-current-buffer)))))
+	    
+	    ;; OPTIONAL, some users need specify extra flags forwarded to compiler
+	    ;; (setq cppcm-extra-preprocss-flags-from-user '("-I/usr/src/linux/include" "-DNDEBUG"))
+	    ))
+
+(use-package cmake-font-lock)
+(use-package company-c-headers)
+
+(use-package doxymacs
+  :ensure nil
+  :init (require 'doxymacs)
+  :config (progn
+	    (defun my-doxymacs-font-lock-hook ()
+	      (if (or (eq major-mode 'c-mode)
+		      (eq major-mode 'c++-mode))
+		  (doxymacs-font-lock)))
+	    (add-hook 'font-lock-mode-hook 'my-doxymacs-font-lock-hook)
+	    (add-hook 'c-mode-common-hook 'doxymacs-mode)))
 
 
 ;;(install-external-package "pacman -S cpplint")
+
+(require 'font-lock)
+
+(defun --copy-face (new-face face)
+  "Define NEW-FACE from existing FACE."
+  (copy-face face new-face)
+  (eval `(defvar ,new-face nil))
+  (set new-face new-face))
+
+(--copy-face 'font-lock-label-face  ; labels, case, public, private, proteced, namespace-tags
+	     'font-lock-keyword-face)
+(--copy-face 'font-lock-doc-markup-face ; comment markups such as Javadoc-tags
+	     'font-lock-doc-face)
+(--copy-face 'font-lock-doc-string-face ; comment markups
+	     'font-lock-comment-face)
+
+(global-font-lock-mode t)
+(setq font-lock-maximum-decoration t)
+
+
+(add-hook 'c++-mode-hook
+	  '(lambda()
+	     ;; We could place some regexes into `c-mode-common-hook', but note that their evaluation order
+	     ;; matters.
+	     (font-lock-add-keywords
+	      nil '(;; complete some fundamental keywords
+		    ("\\<\\(void\\|unsigned\\|signed\\|char\\|short\\|bool\\|int\\|long\\|float\\|double\\)\\>" . font-lock-keyword-face)
+		    ;; namespace names and tags - these are rendered as constants by cc-mode
+		    ("\\<\\(\\w+::\\)" . font-lock-function-name-face)
+		    ;;  new C++11 keywords
+		    ("\\<\\(alignof\\|alignas\\|constexpr\\|decltype\\|noexcept\\|nullptr\\|static_assert\\|thread_local\\|override\\|final\\)\\>" . font-lock-keyword-face)
+		    ("\\<\\(char16_t\\|char32_t\\)\\>" . font-lock-keyword-face)
+		    ;; PREPROCESSOR_CONSTANT, PREPROCESSORCONSTANT
+		    ("\\<[A-Z]*_[A-Z_]+\\>" . font-lock-constant-face)
+		    ("\\<[A-Z]\\{3,\\}\\>"  . font-lock-constant-face)
+		    ;; hexadecimal numbers
+		    ("\\<0[xX][0-9A-Fa-f]+\\>" . font-lock-constant-face)
+		    ;; integer/float/scientific numbers
+		    ("\\<[\\-+]*[0-9]*\\.?[0-9]+\\([ulUL]+\\|[eE][\\-+]?[0-9]+\\)?\\>" . font-lock-constant-face)
+		    ;; c++11 string literals
+		    ;;       L"wide string"
+		    ;;       L"wide string with UNICODE codepoint: \u2018"
+		    ;;       u8"UTF-8 string", u"UTF-16 string", U"UTF-32 string"
+		    ("\\<\\([LuU8]+\\)\".*?\"" 1 font-lock-keyword-face)
+		    ;;       R"(user-defined literal)"
+		    ;;       R"( a "quot'd" string )"
+		    ;;       R"delimiter(The String Data" )delimiter"
+		    ;;       R"delimiter((a-z))delimiter" is equivalent to "(a-z)"
+		    ("\\(\\<[uU8]*R\"[^\\s-\\\\()]\\{0,16\\}(\\)" 1 font-lock-keyword-face t) ; start delimiter
+		    (   "\\<[uU8]*R\"[^\\s-\\\\()]\\{0,16\\}(\\(.*?\\))[^\\s-\\\\()]\\{0,16\\}\"" 1 font-lock-string-face t)  ; actual string
+		    (   "\\<[uU8]*R\"[^\\s-\\\\()]\\{0,16\\}(.*?\\()[^\\s-\\\\()]\\{0,16\\}\"\\)" 1 font-lock-keyword-face t) ; end delimiter
+
+		    ;; user-defined types (rather project-specific)
+		    ("\\<[A-Za-z_]+[A-Za-z_0-9]*_\\(type\\|ptr\\)\\>" . font-lock-type-face)
+		    ("\\<\\(xstring\\|xchar\\)\\>" . font-lock-type-face)
+		    ))
+             
+	     ) t)
+
+;;;;;;;;;;
+;; Java ;;
+;;;;;;;;;;
+
+(require 'eclim)
+(global-eclim-mode)
+(require 'company-emacs-eclim)
+(company-emacs-eclim-setup)
+
+
 
 ;;;;;;;;;;
 ;; Ruby ;;
 ;;;;;;;;;;
 
 ;; Better Ruby major mode
-(use-package enh-ruby-mode
-  :ensure t
+(require 'ruby-mode)
+(use-package ruby-mode
   :mode ("\\.rb$"
          "\\.rake$"
          "Rakefile"
@@ -1121,37 +1436,42 @@ Uses `current-date-time-format' for the formatting the date/time."
   :interpreter "ruby")
 
 ;; YARDoc mode
-(use-package yard-mode
-  :ensure t)
+(require 'yard-mode)
 
-(add-hook 'enh-ruby-mode-hook 'yard-mode)
+(add-hook 'ruby-mode-hook 'yard-mode)
 
 ;; RSpec minor mode
-(use-package rspec-mode
-  :ensure t)
+(use-package rspec-mode)
 
 ;; Inferior Ruby subprocess
-(use-package inf-ruby
-  :ensure t)
+(use-package inf-ruby)
 
-(add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
+(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
 ;; Bundler commands
-(use-package bundler
-  :ensure t)
+(use-package bundler)
 
 ;; Robe
-(use-package robe
-  :ensure t)
+(use-package robe)
 
 (eval-after-load 'company
   '(push 'company-robe company-backends))
 
-(add-hook 'enh-ruby-mode-hook 'robe-mode)
+(add-hook 'ruby-mode-hook 'robe-mode)
+
+(require 'rvm)
+(rvm-use-default)
 
 (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
   (rvm-activate-corresponding-ruby))
+
+;; (setq flycheck-command-wrapper-function
+;;       #'(lambda (command)
+;;           (if (or (eq major-mode 'ruby-mode)
+;;                   (eq major-mode 'enh-ruby-mode))
+;;               (append '("bundle" "exec") command))))
+
 
 ;; Flycheck checkers
 ;; * rubocop
@@ -1159,8 +1479,8 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 ;;(install-external-package "gem install yard")
 ;;(install-external-package "gem install bundler")
-;;(install-external-package "gem install rubocop")
-;;(install-external-package "gem install ruby-lint")
+;;(install-external-package "gem install rubocop ruby-lint")
+;;(install-external-package "gem install pry pry-doc method_source")
 
 ;;;;;;;;;;;
 ;; OCaml ;;
@@ -1179,7 +1499,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 ;; The OCaml major mode
 (use-package tuareg
-  :ensure t
   :mode (("\\.ml\\'"  . tuareg-mode)
          ("\\.mli\\'" . tuareg-mode)
          ("\\.mll\\'" . tuareg-mode)
@@ -1189,7 +1508,7 @@ Uses `current-date-time-format' for the formatting the date/time."
              (mapc #'(lambda (ext) (add-to-list 'completion-ignored-extensions ext))
                    '(".cmo" ".cmx" ".cma" ".cmxa" ".cmi" ".cmxs" ".cmt" ".annot"))))
 
-(add-hook 'tuareg-mod #'(lambda () (interactive) (setq mode-name "ocaml")))
+(add-hook 'tuareg-mode-hook #'(lambda () (interactive) (setq mode-name "ocaml")))
 
 ;; Indentation 'opam install ocp-indent'
 (use-package ocp-indent
@@ -1197,9 +1516,9 @@ Uses `current-date-time-format' for the formatting the date/time."
 (add-hook 'tuareg-mode-hook #'(lambda () (interactive) (ocp-setup-indent)))
 
 ;; Automatically load utop.el
-(autoload 'utop "utop" "Toplevel for OCaml" t)
-(autoload 'utop-setup-ocaml-buffer "utop" "Toplevel for OCaml" t)
-(add-hook 'tuareg-mode-hook 'utop-setup-ocaml-buffer)
+;;(autoload 'utop "utop" "Toplevel for OCaml" t)
+;; Use the opam installed utop
+;;(setq utop-command "opam config exect -- utop -emacs")
 ;;(autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
 ;;(add-hook 'tuareg-mode-hook 'utop-minor-mode)
 
@@ -1211,13 +1530,12 @@ Uses `current-date-time-format' for the formatting the date/time."
 (add-hook 'caml-mode-hook 'merlin-mode)
 (setq merlin-command 'opam)
 
-;; (require 'flycheck-ocaml)
-;; (with-eval-after-load 'merlin
-;;   ;; Disable Merlin's own error checking
-;;   (setq merlin-error-after-save nil)
-
-;;   ;; Enable Flycheck checker
-;;   (flycheck-ocaml-setup))
+(require 'flycheck-ocaml)
+(with-eval-after-load 'merlin
+  ;; Disable Merlin's own error checking
+  (setq merlin-error-after-save nil)
+  ;; Enable Flycheck checker
+  (flycheck-ocaml-setup))
 
 ;;(install-external-package "pacman -S ocaml" t)
 ;;(install-external-package "opam install ocp-indent")
@@ -1245,8 +1563,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;;;;;;;;;;;;;;;
 
 ;; The major-mode
-(use-package js2-mode
-  :ensure t)
+(use-package js2-mode)
 
 ;; Flycheck checkers:
 ;; * jshint \   !preferred (npm)
@@ -1263,8 +1580,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;;;;;;;;;;;;;;;;;
 
 ;; Coffescript 'npm install -g coffee'
-(use-package coffee-mode
-  :ensure t)
+(use-package coffee-mode)
 
 ;; Flycheck checkers:
 ;; * coffee (the transpiler)
@@ -1277,9 +1593,10 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;; Haskell ;;
 ;;;;;;;;;;;;;
 
+(setenv "PATH" (concat (getenv "PATH") ":~/.cabal/bin/"))
+
 ;; The major-mode
-(use-package haskell-mode
-  :ensure t)
+(use-package haskell-mode)
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
@@ -1319,7 +1636,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 ;; GHC-mod tools 'cabal install ghc-mod'
 (use-package ghc
-  :ensure t
   :config (progn
             (autoload 'ghc-init "ghc" nil t)
             (autoload 'ghc-debug "ghc" nil t)
@@ -1334,7 +1650,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 (setq hs-lint-replace-with-suggestions t)
 
 (use-package flycheck-haskell
-  :ensure t
   :config (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 
 ;; (use-package flycheck-ghcmod
@@ -1352,8 +1667,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;;;;;;;;;;
 
 ;; The major-mode
-(use-package julia-mode
-  :ensure t)
+(use-package julia-mode)
 
 ;;(install-external-package "pacman -S julia" t)
 
@@ -1362,16 +1676,14 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;;;;;;;;
 
 (use-package lua-mode
-  :ensure t
   :mode "\\.lua$"
   :interpreter "lua")
 
-;;;;;;;;;;
-;; Cask ;;
-;;;;;;;;;;
+;;;;;;;;;
+;; SML ;;
+;;;;;;;;;
 
-(use-package cask
-  :ensure t)
+(use-package sml-mode)
 
 (provide 'init)
 

@@ -25,3 +25,9 @@
 [submodule "monokai"]
 	path = themes/monokai
 	url = https://github.com/toroidal-code/monokai-extended-theme.el.git
+[submodule "themes/base16"]
+	path = themes/base16
+	url = https://github.com/milkypostman/base16-emacs.git
+[submodule "lisp/tabbar"]
+	path = lisp/tabbar
+	url = https://github.com/dholm/tabbar.git
