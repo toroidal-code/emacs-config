@@ -4,9 +4,6 @@
 [submodule "lisp/synosaurus"]
 	path = lisp/synosaurus
 	url = https://github.com/toroidal-code/synosaurus
-[submodule "lisp/synonymous"]
-	path = lisp/synonymous
-	url = https://github.com/toroidal-code/synonymous
 [submodule "themes/powerline"]
 	path = themes/powerline
 	url = https://github.com/toroidal-code/powerline.git

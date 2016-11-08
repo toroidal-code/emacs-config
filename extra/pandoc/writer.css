@@ -4,15 +4,27 @@
 }
 
 .markdown-body {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  color: #333;
-  overflow: hidden;
-  font-family: "Droid Serif", Cambria, Georgia, Times, "Times New Roman", serif;
-  /* font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; */
-  font-size: 16px;
-  line-height: 1.6;
-  word-wrap: break-word;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    color: #333;
+    overflow: hidden;
+    font-family: "Droid Serif", Cambria, Georgia, Times, "Times New Roman", serif;
+    /* font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; */
+    font-size: 16px;
+    line-height: 1.6;
+    word-wrap: break-word;
+
+    overflow: auto;
+
+    min-width: 200px;
+    max-width: 728px;
+
+    background-color: #fff;
+    border: 1px solid #ddd;
+    /*border-radius: 3px;*/
+
+    padding: 30px;
+    margin: 20px auto;
 }
 
 .markdown-body a {
@@ -696,20 +708,6 @@
   vertical-align: middle;
 }
 
-/*markdown-viewer*/
-.markdown-body {
-  overflow: auto;
-
-  min-width: 200px;
-  max-width: 728px;
-
-  background-color: #fff;
-  border: 1px solid #ddd;
-  /*border-radius: 3px;*/
-
-  padding: 30px;
-  margin: 20px auto;
-}
 .markdown-body #html>*:first-child {
   margin-top: 0 !important;
 }
